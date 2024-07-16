@@ -1,0 +1,16 @@
+SELECT
+    *
+FROM
+    albums
+SELECT
+    Name,
+    count(albums.AlbumId) AS 'qtde Abuns'
+FROM
+    albums
+INNER JOIN artists
+ON albums.ArtistId = artists.ArtistId
+GROUP BY artists.Name
+ORDER BY count(albums.AlbumId) DESC
+LIMIT 10
+
+
